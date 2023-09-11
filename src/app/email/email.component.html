@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="card">
+
+        <form (ngSubmit)="dosubmitform">
+
+        <h1>compose mail</h1>
+
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>To</mat-label>
+          <input name="To" [(ngModel)]="data.to" matInput required>
+          <mat-error *ngIf="!data.to">email is required</mat-error>
+        </mat-form-field>
+    
+        <!-- <mat-form-field class= "field" appearance="outline">
+            <mat-label>To</mat-label>
+            <input name="To" [(ngModel)]="data.to" matInput>
+          </mat-form-field> -->
+          <mat-form-field class= "field" appearance="outline">
+            <mat-label>Subject</mat-label>
+            <input name="Subject"[(ngModel)]="data.subject " matInput required>
+            <mat-error *ngIf="!data.subject">subject is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width field">
+            <mat-label>Enter your message</mat-label>
+            <textarea  name="message"[(ngModel)]="data.message "matInput required row="10" matInput placeholder="comment"></textarea>
+            <mat-error *ngIf="!data.message">message is required</mat-error> 
+          </mat-form-field>
+
+          <div class="text-center">
+            <mat-spinner *ngIf="flag" style="margin: auto;"></mat-spinner>
+
+            <button type="submit" mat-raised-button color="primary">Send</button>
+            <button type="reset" mat-raised-button color="accent">reset</button>
+
+          </div>
+
+          </form>
+          <!-- {{data| json }} -->
+         
+
+
+          
+    </div>
+
+
+</div>
